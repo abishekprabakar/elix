@@ -1,0 +1,128 @@
+/* Elix design tokens. Values from specs/08-design-system.md. */
+:root {
+  --paper: #F6F6F3;
+  --surface: #FFFFFF;
+  --surface-2: #EEEEEA;
+  --ink: #121417;
+  --ink-2: #4E525A;
+  --ink-3: #868A91;
+  --rule: #E0E0DB;
+  --engrave: #D4D4CE;
+  --elixir: #121417;
+  --elixir-ink: #FFFFFF;
+  --elixir-soft: #ECECE7;
+  --pip: #7B1FD1;
+  --pip-soft: #F1E6FB;
+  --ok: #17734A;
+  --ok-soft: #E2F1E8;
+  --hold: #95570A;
+  --hold-soft: #FBEEDA;
+  --deny: #B42318;
+  --deny-soft: #FBE5E2;
+  --link: #1F4FB8;
+
+  /* derived */
+  --rule-strong: #C8C8C2;
+  --row-hover: #F7F7F4;
+  --series-x402: #121417;
+  --series-bank: #B9BBB4;
+  --scrim: rgb(18 20 23 / 0.22);
+  --shadow-pop: 0 1px 0 var(--rule), 0 12px 32px -12px rgb(18 20 23 / 0.22);
+  --hatch-a: var(--ink-3);
+  --hatch-b: var(--surface-2);
+
+  --font: 'Host Grotesk Variable', 'Host Grotesk', 'Helvetica Neue', Arial, sans-serif;
+  --mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+
+  --t-xs: 0.75rem;
+  --t-sm: 0.8125rem;
+  --t-ui: 0.875rem;
+  --t-md: 1rem;
+  --t-lg: 1.125rem;
+  --t-xl: 1.375rem;
+  --t-2xl: 1.75rem;
+  --t-3xl: 2.25rem;
+  --t-4xl: 3rem;
+
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-7: 32px;
+  --s-8: 40px;
+  --s-9: 56px;
+  --s-10: 72px;
+
+  --r-ctl: 4px;
+  --r-panel: 8px;
+
+  --topbar-h: 52px;
+  --footer-h: 32px;
+  --nav-w: 216px;
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #121417;
+    --surface: #1A1D21;
+    --surface-2: #22262B;
+    --ink: #F1F1EE;
+    --ink-2: #AEB2B8;
+    --ink-3: #7F848B;
+    --rule: #2C3036;
+    --engrave: #2A2E33;
+    --elixir: #F1F1EE;
+    --elixir-ink: #121417;
+    --elixir-soft: #2A2E34;
+    --pip: #C99BF2;
+    --pip-soft: #2D2238;
+    --ok: #5CC08C;
+    --ok-soft: #15291F;
+    --hold: #E2A949;
+    --hold-soft: #2E2312;
+    --deny: #FF8378;
+    --deny-soft: #33191B;
+    --link: #8AB4FF;
+    --rule-strong: #3A3F46;
+    --row-hover: #1E2125;
+    --series-x402: #F1F1EE;
+    --series-bank: #5A5F66;
+    --scrim: rgb(0 0 0 / 0.5);
+    --shadow-pop: 0 1px 0 var(--rule), 0 16px 40px -12px rgb(0 0 0 / 0.65);
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --paper: #121417;
+  --surface: #1A1D21;
+  --surface-2: #22262B;
+  --ink: #F1F1EE;
+  --ink-2: #AEB2B8;
+  --ink-3: #7F848B;
+  --rule: #2C3036;
+  --engrave: #2A2E33;
+  --elixir: #F1F1EE;
+  --elixir-ink: #121417;
+  --elixir-soft: #2A2E34;
+  --pip: #C99BF2;
+  --pip-soft: #2D2238;
+  --ok: #5CC08C;
+  --ok-soft: #15291F;
+  --hold: #E2A949;
+  --hold-soft: #2E2312;
+  --deny: #FF8378;
+  --deny-soft: #33191B;
+  --link: #8AB4FF;
+  --rule-strong: #3A3F46;
+  --row-hover: #1E2125;
+  --series-x402: #F1F1EE;
+  --series-bank: #5A5F66;
+  --scrim: rgb(0 0 0 / 0.5);
+  --shadow-pop: 0 1px 0 var(--rule), 0 16px 40px -12px rgb(0 0 0 / 0.65);
+  color-scheme: dark;
+}

@@ -1,0 +1,9 @@
+{
+  "key": "1f199ba428e2bcac504a92f847f0ae7c4999b13705dd51a03bc0b3383e8327d8",
+  "name": "payee_hold_dark",
+  "source": "site/assets/source/item_payee_hold_dark.png",
+  "placeholder": false,
+  "width": 1300,
+  "height": 1009,
+  "bytes": 65214
+}

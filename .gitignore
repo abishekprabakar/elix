@@ -1,0 +1,42 @@
+# runtime data
+data/
+*.db
+*.db-journal
+eval/work/
+
+# secrets
+.env
+.env.*
+!.env.example
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+build/
+dist/
+!console/dist/
+!site/dist/
+
+# node
+node_modules/
+console/.vite/
+
+# os
+.DS_Store
+
+# not part of Elix
+node_modules/
+/.next/
+/app/
+/components/
+/lib/
+/next.config.mjs
+/next-env.d.ts
+/package.json
+/package-lock.json
+/postcss.config.mjs
+/tailwind.config.ts
+/tsconfig.json

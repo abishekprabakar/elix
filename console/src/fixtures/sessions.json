@@ -1,0 +1,110 @@
+[
+ {
+  "id": "ses-atlas-0024",
+  "agent_id": "agent:atlas",
+  "task": "Assemble 10 m imagery for the Sept 28 hailstorm footprint in Buffalo County, Nebraska, for the hail-v7 training set.",
+  "mode": "scripted",
+  "model": null,
+  "started_at": "2026-10-24T14:31:40Z",
+  "ended_at": "2026-10-24T14:32:03Z",
+  "status": "waiting_on_human",
+  "request_ids": [
+   "WI-0393"
+  ],
+  "transcript": [
+   {
+    "at": "2026-10-24T14:31:40Z",
+    "role": "user",
+    "text": "Assemble 10 m imagery for the Sept 28 hailstorm footprint in Buffalo County, Nebraska, for the hail-v7 training set."
+   },
+   {
+    "at": "2026-10-24T14:31:41Z",
+    "role": "assistant",
+    "text": "I will check my budget first, then look at Terrafield for 10 m scenes covering the footprint."
+   },
+   {
+    "at": "2026-10-24T14:31:42Z",
+    "role": "tool_call",
+    "tool": "budget_status",
+    "args": {}
+   },
+   {
+    "at": "2026-10-24T14:31:42Z",
+    "role": "tool_result",
+    "tool": "budget_status",
+    "result": {
+     "cap_cents": 25000,
+     "budget_cents": 600000,
+     "spent_cents": 102600,
+     "committed_cents": 3600
+    }
+   },
+   {
+    "at": "2026-10-24T14:31:44Z",
+    "role": "tool_call",
+    "tool": "get_catalog",
+    "args": {
+     "vendor_id": "ven_terrafield"
+    }
+   },
+   {
+    "at": "2026-10-24T14:31:45Z",
+    "role": "tool_result",
+    "tool": "get_catalog",
+    "result": {
+     "vendor": "Terrafield Imagery",
+     "skus": [
+      "scene-10m $18.00",
+      "scene-3m $46.00"
+     ]
+    }
+   },
+   {
+    "at": "2026-10-24T14:31:50Z",
+    "role": "assistant",
+    "text": "One cloud free 10 m scene after the storm completes the validation split. I will request it with the task reference."
+   },
+   {
+    "at": "2026-10-24T14:31:55Z",
+    "role": "tool_call",
+    "tool": "request_purchase",
+    "args": {
+     "vendor_id": "ven_terrafield",
+     "sku": "scene-10m",
+     "quantity": 1,
+     "purpose": "Cloud free 10 m scene for the Buffalo County validation split",
+     "task_ref": "HAIL-418"
+    }
+   },
+   {
+    "at": "2026-10-24T14:31:57Z",
+    "role": "tool_result",
+    "tool": "request_purchase",
+    "result": {
+     "item_id": "WI-0393",
+     "state": "NEEDS_APPROVAL",
+     "summary": "Needs Dev Okafor. Every check passed, but no policy covers Atlas buying this over $15."
+    }
+   },
+   {
+    "at": "2026-10-24T14:32:03Z",
+    "role": "assistant",
+    "text": "WI-0393 is waiting on Dev Okafor. I cannot approve or pay, so I am stopping here and reporting back."
+   }
+  ]
+ },
+ {
+  "id": "ses-forge-0017",
+  "agent_id": "agent:forge",
+  "task": "Reserve 400 H100 spot hours to retrain hail-v7 on the new Nebraska scenes this weekend.",
+  "mode": "scripted",
+  "model": null,
+  "started_at": "2026-10-24T14:48:01Z",
+  "ended_at": "2026-10-24T14:48:20Z",
+  "status": "waiting_on_human",
+  "request_ids": [
+   "WI-0394"
+  ],
+  "transcript": []
+ }
+]

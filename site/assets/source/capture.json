@@ -1,0 +1,20 @@
+{
+  "console_dist_sha256": "32a5850676e6c2594ae63a0bfff198fe04abd66c36576a9a1fb8a7e484567e65",
+  "captured_at": "2026-10-24T12:28:58Z",
+  "screens": [
+    "today",
+    "reconcile",
+    "item_payee_hold",
+    "audit_why"
+  ],
+  "world": {
+    "hero_sub": "<code>WI-1339</code> on October 9, 2026, replayed from the demo ledger",
+    "hero_task_ref": "hail-v7-train-1009",
+    "hero_purpose": "Spot GPU hours for the hail-v7 training run",
+    "hero_checks_sentence": "Eleven checks passed. No policy lets Forge spend $1,260.00 without review, so Dev Okafor approved it.",
+    "hero_checks_meta": "<code>R01</code> to <code>R11</code> passed",
+    "hero_tx_short": "sim-eb9103161\u2026",
+    "lumen_pay_to_short": "0xfc77\u2026cA74",
+    "hero_je_label": "<code>JE-2026-10-0026</code>"
+  }
+}

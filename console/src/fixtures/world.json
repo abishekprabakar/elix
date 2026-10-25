@@ -1,0 +1,451 @@
+{
+ "company": {
+  "name": "Kestrel Labs",
+  "description": "Kestrel Labs sells hail and flood forecasts to crop insurers in the Great Plains. 38 people.",
+  "today": "2026-10-24",
+  "synthetic_notice": "Kestrel Labs is a fictional company. All data is synthetic."
+ },
+ "actors": [
+  {
+   "id": "human:priya",
+   "kind": "human",
+   "name": "Priya Raman",
+   "role": "controller",
+   "title": "Controller",
+   "owner_id": null,
+   "cost_center": null
+  },
+  {
+   "id": "human:dev",
+   "kind": "human",
+   "name": "Dev Okafor",
+   "role": "budget_owner",
+   "title": "Head of ML",
+   "owner_id": null,
+   "cost_center": null
+  },
+  {
+   "id": "human:maya",
+   "kind": "human",
+   "name": "Maya Chen",
+   "role": "budget_owner",
+   "title": "Head of Growth",
+   "owner_id": null,
+   "cost_center": null
+  },
+  {
+   "id": "human:sam",
+   "kind": "human",
+   "name": "Sam Ortiz",
+   "role": "accountant",
+   "title": "Staff accountant",
+   "owner_id": null,
+   "cost_center": null
+  },
+  {
+   "id": "human:jordan",
+   "kind": "human",
+   "name": "Jordan Lee",
+   "role": "auditor",
+   "title": "External auditor, Rivera & Cole LLP",
+   "owner_id": null,
+   "cost_center": null
+  },
+  {
+   "id": "agent:atlas",
+   "kind": "agent",
+   "name": "Atlas",
+   "role": "agent",
+   "title": "Research agent",
+   "owner_id": "human:dev",
+   "cost_center": "ML"
+  },
+  {
+   "id": "agent:forge",
+   "kind": "agent",
+   "name": "Forge",
+   "role": "agent",
+   "title": "Training ops agent",
+   "owner_id": "human:dev",
+   "cost_center": "ML"
+  },
+  {
+   "id": "agent:scout",
+   "kind": "agent",
+   "name": "Scout",
+   "role": "agent",
+   "title": "Growth agent",
+   "owner_id": "human:maya",
+   "cost_center": "GTM"
+  },
+  {
+   "id": "system:sync",
+   "kind": "system",
+   "name": "Sync",
+   "role": "sync",
+   "title": "Ingests invoices, usage meters and receipts",
+   "owner_id": null,
+   "cost_center": null
+  },
+  {
+   "id": "system:policy",
+   "kind": "system",
+   "name": "Elix policy engine",
+   "role": "policy",
+   "title": null,
+   "owner_id": null,
+   "cost_center": null
+  },
+  {
+   "id": "system:gateway",
+   "kind": "system",
+   "name": "Elix gateway",
+   "role": "gateway",
+   "title": null,
+   "owner_id": null,
+   "cost_center": null
+  },
+  {
+   "id": "system:learner",
+   "kind": "system",
+   "name": "Elix learner",
+   "role": "learner",
+   "title": null,
+   "owner_id": null,
+   "cost_center": null
+  }
+ ],
+ "agents": [
+  {
+   "actor_id": "agent:atlas",
+   "name": "Atlas",
+   "owner_id": "human:dev",
+   "cost_center": "ML",
+   "per_txn_cap_cents": 25000,
+   "monthly_budget_cents": 600000,
+   "auto_approve_under_cents": 1500,
+   "description": "Research agent. Buys satellite scenes and radar archives for model training."
+  },
+  {
+   "actor_id": "agent:forge",
+   "name": "Forge",
+   "owner_id": "human:dev",
+   "cost_center": "ML",
+   "per_txn_cap_cents": 250000,
+   "monthly_budget_cents": 4000000,
+   "auto_approve_under_cents": 20000,
+   "description": "Training ops agent. Reserves GPU hours for training runs."
+  },
+  {
+   "actor_id": "agent:scout",
+   "name": "Scout",
+   "owner_id": "human:maya",
+   "cost_center": "GTM",
+   "per_txn_cap_cents": 15000,
+   "monthly_budget_cents": 250000,
+   "auto_approve_under_cents": 2500,
+   "description": "Growth agent. Buys insurer firmographics and search queries for outreach."
+  }
+ ],
+ "vendors": [
+  {
+   "id": "ven_terrafield",
+   "name": "Terrafield Imagery",
+   "rails": [
+    "x402"
+   ],
+   "billing": "per_request",
+   "category": "Satellite imagery",
+   "payout_address": "0xDaA84134A092B7232Ee90FbE558A065C668BD1E1",
+   "default_account": "6110",
+   "status": "active",
+   "skus": [
+    {
+     "sku": "scene-10m",
+     "description": "Satellite scene at 10 m resolution",
+     "unit": "scene",
+     "unit_price_cents": 1800,
+     "tolerance_pct": 10
+    },
+    {
+     "sku": "scene-3m",
+     "description": "Satellite scene at 3 m resolution",
+     "unit": "scene",
+     "unit_price_cents": 4600,
+     "tolerance_pct": 10
+    }
+   ],
+   "notes": "Satellite imagery tiles"
+  },
+  {
+   "id": "ven_stormvault",
+   "name": "Stormvault",
+   "rails": [
+    "x402"
+   ],
+   "billing": "per_request",
+   "category": "Radar archive",
+   "payout_address": "0x723048C7D7437e0EdBbCC3aadA6F15f66Be11664",
+   "previous_payout_address": "0xC7a5777099A2700535D0b387ccEfEb6ebE469979",
+   "payout_address_changed_at": "2026-10-24T14:00:00Z",
+   "default_account": "6110",
+   "status": "active",
+   "skus": [
+    {
+     "sku": "station-day",
+     "description": "One radar station for one day",
+     "unit": "station day",
+     "unit_price_cents": 650,
+     "tolerance_pct": 10
+    },
+    {
+     "sku": "archive-tx-2025",
+     "description": "Full Texas 2025 radar archive, one time",
+     "unit": "archive",
+     "unit_price_cents": 480000,
+     "tolerance_pct": 10
+    }
+   ],
+   "notes": "Radar archive"
+  },
+  {
+   "id": "ven_lumen",
+   "name": "Lumen Compute",
+   "rails": [
+    "x402",
+    "bank"
+   ],
+   "billing": "semi_monthly_invoice",
+   "category": "GPU cloud",
+   "payout_address": "0xfc77E28beB786cAE443B09A1D751F4fc61A5cA74",
+   "bank_account_last4": "7781",
+   "default_account": "5110",
+   "status": "active",
+   "skus": [
+    {
+     "sku": "h100-spot-hr",
+     "description": "H100 spot GPU hour",
+     "unit": "GPU hour",
+     "unit_price_cents": 210,
+     "tolerance_pct": 10
+    },
+    {
+     "sku": "h100-ondemand-hr",
+     "description": "H100 on demand GPU hour",
+     "unit": "GPU hour",
+     "unit_price_cents": 210,
+     "tolerance_pct": 10
+    },
+    {
+     "sku": "h100-reserved-halfmonth",
+     "description": "Reserved H100 cluster for half a month",
+     "unit": "half month",
+     "unit_price_cents": 900000,
+     "tolerance_pct": 10
+    }
+   ],
+   "notes": "GPU cloud"
+  },
+  {
+   "id": "ven_signalboard",
+   "name": "Signalboard",
+   "rails": [
+    "x402"
+   ],
+   "billing": "per_request",
+   "category": "Insurer firmographics",
+   "payout_address": "0x2041f55fd18A6Af7103e0dC1B574771D67A3575D",
+   "default_account": "6110",
+   "status": "active",
+   "skus": [
+    {
+     "sku": "firmo-record",
+     "description": "One insurer firmographic record",
+     "unit": "record",
+     "unit_price_cents": 40,
+     "tolerance_pct": 10
+    }
+   ],
+   "notes": "Insurer firmographics"
+  },
+  {
+   "id": "ven_parsec",
+   "name": "Parsec Search",
+   "rails": [
+    "x402"
+   ],
+   "billing": "per_request",
+   "category": "Search API",
+   "payout_address": "0xE5f927cAdcFd8510cbC936C5592b320dB5E515Ba",
+   "default_account": "6120",
+   "status": "active",
+   "skus": [
+    {
+     "sku": "query-1k",
+     "description": "1,000 search API queries",
+     "unit": "1,000 queries",
+     "unit_price_cents": 500,
+     "tolerance_pct": 10
+    }
+   ],
+   "notes": "Search API"
+  },
+  {
+   "id": "ven_anthropic",
+   "name": "Anthropic",
+   "rails": [
+    "bank"
+   ],
+   "billing": "monthly_invoice",
+   "category": "Model inference",
+   "bank_account_last4": "0412",
+   "default_account": "5120",
+   "status": "active",
+   "skus": [
+    {
+     "sku": "input-mtok",
+     "description": "Input tokens, per million",
+     "unit": "million tokens",
+     "unit_price_cents": 300,
+     "tolerance_pct": 10
+    },
+    {
+     "sku": "output-mtok",
+     "description": "Output tokens, per million",
+     "unit": "million tokens",
+     "unit_price_cents": 1500,
+     "tolerance_pct": 10
+    }
+   ],
+   "notes": "Model inference for all three agents"
+  },
+  {
+   "id": "ven_aws",
+   "name": "Amazon Web Services",
+   "rails": [
+    "bank"
+   ],
+   "billing": "monthly_invoice",
+   "category": "Storage",
+   "bank_account_last4": "2290",
+   "default_account": "5110",
+   "status": "active",
+   "skus": [
+    {
+     "sku": "s3-tb-month",
+     "description": "S3 storage, per TB month",
+     "unit": "TB month",
+     "unit_price_cents": 2300,
+     "tolerance_pct": 10
+    },
+    {
+     "sku": "egress-tb",
+     "description": "Data egress, per TB",
+     "unit": "TB",
+     "unit_price_cents": 9000,
+     "tolerance_pct": 10
+    }
+   ],
+   "notes": "Storage"
+  }
+ ],
+ "accounts": [
+  {
+   "code": "1010",
+   "name": "Operating cash (Mercury)",
+   "type": "asset"
+  },
+  {
+   "code": "1015",
+   "name": "USDC wallet (Base)",
+   "type": "asset"
+  },
+  {
+   "code": "1310",
+   "name": "Prepaid expenses",
+   "type": "asset"
+  },
+  {
+   "code": "2010",
+   "name": "Accounts payable",
+   "type": "liability"
+  },
+  {
+   "code": "2110",
+   "name": "Accrued expenses",
+   "type": "liability"
+  },
+  {
+   "code": "2150",
+   "name": "Vendor disputes",
+   "type": "liability"
+  },
+  {
+   "code": "3000",
+   "name": "Opening balance equity",
+   "type": "equity"
+  },
+  {
+   "code": "5110",
+   "name": "Compute, training and storage",
+   "type": "expense"
+  },
+  {
+   "code": "5120",
+   "name": "Model inference",
+   "type": "expense"
+  },
+  {
+   "code": "6110",
+   "name": "Data and research",
+   "type": "expense"
+  },
+  {
+   "code": "6120",
+   "name": "Software and tools",
+   "type": "expense"
+  },
+  {
+   "code": "6210",
+   "name": "Marketing data",
+   "type": "expense"
+  },
+  {
+   "code": "6850",
+   "name": "Bank and network fees",
+   "type": "expense"
+  },
+  {
+   "code": "6990",
+   "name": "Suspense",
+   "type": "expense"
+  }
+ ],
+ "periods": [
+  {
+   "id": "2026-07",
+   "status": "closed",
+   "closed_by": "human:priya",
+   "closed_at": "2026-08-06T22:10:00Z"
+  },
+  {
+   "id": "2026-08",
+   "status": "closed",
+   "closed_by": "human:priya",
+   "closed_at": "2026-09-04T21:40:00Z"
+  },
+  {
+   "id": "2026-09",
+   "status": "closed",
+   "closed_by": "human:priya",
+   "closed_at": "2026-10-06T23:05:00Z"
+  },
+  {
+   "id": "2026-10",
+   "status": "open",
+   "closed_by": null,
+   "closed_at": null
+  }
+ ],
+ "rail_mode": "offline"
+}

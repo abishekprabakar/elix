@@ -1,0 +1,137 @@
+[
+ {
+  "id": "cross-rail-double-bill",
+  "title": "Lumen bills hours already paid over x402",
+  "description": "Lumen's invoice LUM-2026-10A arrives for October 1 to 15. It bills 2,140 on demand hours, but 600 of them are the spot hours Forge already paid for over x402 on October 9. Elix proposes paying $12,234.00 and disputing $1,260.00, and Sam approves it.",
+  "prerequisites": [
+   "Seeded world",
+   "Oct 9 Forge spot purchase posted"
+  ],
+  "ready": true,
+  "last_run": {
+   "at": "2026-10-24T15:05:00Z",
+   "result_ids": [
+    "WI-0399"
+   ]
+  }
+ },
+ {
+  "id": "payee-change",
+  "title": "Stormvault changes its payout address",
+  "description": "Two hours after Stormvault's payout address changes, Atlas asks for the full Texas 2025 radar archive for $4,800.00. Dev can approve the spend, but the money stays on hold until Priya verifies the new address.",
+  "prerequisites": [
+   "Seeded world"
+  ],
+  "ready": true,
+  "last_run": {
+   "at": "2026-10-24T15:12:30Z",
+   "result_ids": [
+    "WI-0395"
+   ]
+  }
+ },
+ {
+  "id": "retry-double-pay",
+  "title": "Forge retries a request with a new key",
+  "description": "Forge asks for 600 spot hours for $1,260.00, and its HTTP client retries 41 seconds later with a new idempotency key. Elix denies the retry as a duplicate and links it to the first request.",
+  "prerequisites": [
+   "Seeded world"
+  ],
+  "ready": true,
+  "last_run": {
+   "at": "2026-10-24T15:41:20Z",
+   "result_ids": [
+    "WI-0397",
+    "WI-0398"
+   ]
+  }
+ },
+ {
+  "id": "self-approval",
+  "title": "Scout tries to approve its own order",
+  "description": "Scout asks for 1,200 Signalboard records for $480.00 and copies the vendor's note claiming the order is pre-approved by finance. Elix records the claim, sends the request to Maya, and refuses when Scout tries to approve it.",
+  "prerequisites": [
+   "Seeded world"
+  ],
+  "ready": true,
+  "last_run": {
+   "at": "2026-10-24T15:36:10Z",
+   "result_ids": [
+    "WI-0396"
+   ]
+  }
+ },
+ {
+  "id": "split-purchase",
+  "title": "Scout splits an order into small packs",
+  "description": "Scout buys Parsec query packs at $24.00 each, one every two minutes. The first six auto approve. The seventh would bring the hour to $168.00, over the $150 cap, so Elix sends it to Maya as a split purchase.",
+  "prerequisites": [
+   "Seeded world"
+  ],
+  "ready": true,
+  "last_run": null
+ },
+ {
+  "id": "closed-period-fix",
+  "title": "Sam fixes an entry in a closed month",
+  "description": "Sam recodes a September Signalboard entry from 6110 to 6210. September is closed, so Elix refuses the edit and creates a correction that reverses and reposts in October. It is the third such recode, so the learner proposes a coding policy.",
+  "prerequisites": [
+   "Seeded world",
+   "September closed"
+  ],
+  "ready": true,
+  "last_run": {
+   "at": "2026-10-24T15:52:00Z",
+   "result_ids": [
+    "WI-0403",
+    "pol-004"
+   ]
+  }
+ },
+ {
+  "id": "learn-policies",
+  "title": "Learn approval policies from history",
+  "description": "The learner reviews July to September and proposes auto approve policies where a person approved every precedent. Terrafield 3 m scenes are left out because Dev rejected one in August. Priya approves the proposals.",
+  "prerequisites": [
+   "Seeded world",
+   "July to September closed"
+  ],
+  "ready": true,
+  "last_run": {
+   "at": "2026-10-24T15:48:00Z",
+   "result_ids": [
+    "pol-001",
+    "pol-002",
+    "pol-003"
+   ]
+  }
+ },
+ {
+  "id": "month-end-accruals",
+  "title": "Preview the October close",
+  "description": "Elix previews the October close, proposes accruals for Anthropic tokens, AWS storage and Lumen on demand hours that have not been invoiced yet, and lists what still blocks the close.",
+  "prerequisites": [
+   "Seeded world"
+  ],
+  "ready": true,
+  "last_run": null
+ },
+ {
+  "id": "audit-question",
+  "title": "Jordan asks why an invoice was paid short",
+  "description": "Jordan, the external auditor, asks why LUM-2026-10A was paid $1,260.00 short. The answer comes back in one query with every event, actor, rule and evidence id.",
+  "prerequisites": [
+   "Run the Lumen scenario first"
+  ],
+  "ready": true,
+  "last_run": null
+ },
+ {
+  "id": "custom",
+  "title": "Try your own purchase",
+  "description": "Submit any purchase as any agent, with optional price and payee overrides, and watch the checks decide.",
+  "prerequisites": [],
+  "ready": true,
+  "last_run": null
+ }
+]

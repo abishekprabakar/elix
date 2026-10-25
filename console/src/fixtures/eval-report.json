@@ -1,0 +1,139 @@
+{
+ "seed": 11,
+ "mode": "offline x402 rail with local vendor servers",
+ "generated_at": "2026-10-24T09:41:12Z",
+ "runtime_seconds": 48.6,
+ "engine_git_hash": null,
+ "events_total": 646,
+ "anomalies_total": 56,
+ "anomalies_caught": 56,
+ "anomalies_not_auto_paid": 56,
+ "anomalies_auto_paid": 0,
+ "clean_total": 590,
+ "clean_auto_paid": 317,
+ "clean_escalated": 77,
+ "all_auto_paid": 317,
+ "automation_precision": 1,
+ "automation_rate_before_learning": 0.2092,
+ "automation_rate_after_learning": 0.8046,
+ "chain_ok": true,
+ "per_category": [
+  {
+   "category": "DUPLICATE_RETRY",
+   "planted": 4,
+   "caught": 4,
+   "not_auto_paid": 4,
+   "auto_paid": 0,
+   "notes": null
+  },
+  {
+   "category": "PAYEE_CHANGED",
+   "planted": 4,
+   "caught": 4,
+   "not_auto_paid": 4,
+   "auto_paid": 0,
+   "notes": null
+  },
+  {
+   "category": "PRICE_ABOVE_CONTRACT",
+   "planted": 4,
+   "caught": 4,
+   "not_auto_paid": 4,
+   "auto_paid": 0,
+   "notes": null
+  },
+  {
+   "category": "AMOUNT_MISMATCH",
+   "planted": 4,
+   "caught": 4,
+   "not_auto_paid": 4,
+   "auto_paid": 0,
+   "notes": null
+  },
+  {
+   "category": "OVER_TXN_CAP",
+   "planted": 4,
+   "caught": 4,
+   "not_auto_paid": 4,
+   "auto_paid": 0,
+   "notes": null
+  },
+  {
+   "category": "BUDGET_EXCEEDED",
+   "planted": 4,
+   "caught": 4,
+   "not_auto_paid": 4,
+   "auto_paid": 0,
+   "notes": null
+  },
+  {
+   "category": "SPLIT_PURCHASE",
+   "planted": 4,
+   "caught": 4,
+   "not_auto_paid": 4,
+   "auto_paid": 0,
+   "notes": null
+  },
+  {
+   "category": "UNKNOWN_VENDOR",
+   "planted": 4,
+   "caught": 4,
+   "not_auto_paid": 4,
+   "auto_paid": 0,
+   "notes": null
+  },
+  {
+   "category": "MISSING_PURPOSE",
+   "planted": 4,
+   "caught": 4,
+   "not_auto_paid": 4,
+   "auto_paid": 0,
+   "notes": null
+  },
+  {
+   "category": "MEMO_INSTRUCTIONS",
+   "planted": 4,
+   "caught": 4,
+   "not_auto_paid": 4,
+   "auto_paid": 0,
+   "notes": null
+  },
+  {
+   "category": "SELF_APPROVAL",
+   "planted": 4,
+   "caught": 4,
+   "not_auto_paid": 4,
+   "auto_paid": 0,
+   "notes": "Approval refused with 403 and audited"
+  },
+  {
+   "category": "INVOICE_DOUBLE_BILL",
+   "planted": 4,
+   "caught": 4,
+   "not_auto_paid": 4,
+   "auto_paid": 0,
+   "notes": "Short pay matched the answer key within $1"
+  },
+  {
+   "category": "INVOICE_OVERBILL",
+   "planted": 4,
+   "caught": 4,
+   "not_auto_paid": 4,
+   "auto_paid": 0,
+   "notes": null
+  },
+  {
+   "category": "INVOICE_RATE",
+   "planted": 4,
+   "caught": 4,
+   "not_auto_paid": 4,
+   "auto_paid": 0,
+   "notes": null
+  }
+ ],
+ "learned_policies": [
+  "Atlas, Terrafield scene-10m",
+  "Forge, Lumen h100-spot-hr",
+  "Scout, Signalboard firmo-record"
+ ]
+}

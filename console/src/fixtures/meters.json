@@ -1,0 +1,209 @@
+[
+ {
+  "vendor_id": "ven_lumen",
+  "sku": "h100-ondemand-hr",
+  "agent_id": "agent:forge",
+  "quantity": 103,
+  "window_start": "2026-10-01T00:00:00Z",
+  "window_end": "2026-10-01T23:59:59Z",
+  "source": "agent_meter"
+ },
+ {
+  "vendor_id": "ven_lumen",
+  "sku": "h100-ondemand-hr",
+  "agent_id": "agent:forge",
+  "quantity": 132,
+  "window_start": "2026-10-02T00:00:00Z",
+  "window_end": "2026-10-02T23:59:59Z",
+  "source": "agent_meter"
+ },
+ {
+  "vendor_id": "ven_lumen",
+  "sku": "h100-ondemand-hr",
+  "agent_id": "agent:forge",
+  "quantity": 82,
+  "window_start": "2026-10-03T00:00:00Z",
+  "window_end": "2026-10-03T23:59:59Z",
+  "source": "agent_meter"
+ },
+ {
+  "vendor_id": "ven_lumen",
+  "sku": "h100-ondemand-hr",
+  "agent_id": "agent:forge",
+  "quantity": 91,
+  "window_start": "2026-10-04T00:00:00Z",
+  "window_end": "2026-10-04T23:59:59Z",
+  "source": "agent_meter"
+ },
+ {
+  "vendor_id": "ven_lumen",
+  "sku": "h100-ondemand-hr",
+  "agent_id": "agent:forge",
+  "quantity": 86,
+  "window_start": "2026-10-05T00:00:00Z",
+  "window_end": "2026-10-05T23:59:59Z",
+  "source": "agent_meter"
+ },
+ {
+  "vendor_id": "ven_lumen",
+  "sku": "h100-ondemand-hr",
+  "agent_id": "agent:forge",
+  "quantity": 110,
+  "window_start": "2026-10-06T00:00:00Z",
+  "window_end": "2026-10-06T23:59:59Z",
+  "source": "agent_meter"
+ },
+ {
+  "vendor_id": "ven_lumen",
+  "sku": "h100-ondemand-hr",
+  "agent_id": "agent:forge",
+  "quantity": 137,
+  "window_start": "2026-10-07T00:00:00Z",
+  "window_end": "2026-10-07T23:59:59Z",
+  "source": "agent_meter"
+ },
+ {
+  "vendor_id": "ven_lumen",
+  "sku": "h100-ondemand-hr",
+  "agent_id": "agent:forge",
+  "quantity": 80,
+  "window_start": "2026-10-08T00:00:00Z",
+  "window_end": "2026-10-08T23:59:59Z",
+  "source": "agent_meter"
+ },
+ {
+  "vendor_id": "ven_lumen",
+  "sku": "h100-ondemand-hr",
+  "agent_id": "agent:forge",
+  "quantity": 418,
+  "window_start": "2026-10-09T00:00:00Z",
+  "window_end": "2026-10-09T23:59:59Z",
+  "source": "agent_meter"
+ },
+ {
+  "vendor_id": "ven_lumen",
+  "sku": "h100-ondemand-hr",
+  "agent_id": "agent:forge",
+  "quantity": 378,
+  "window_start": "2026-10-10T00:00:00Z",
+  "window_end": "2026-10-10T23:59:59Z",
+  "source": "agent_meter"
+ },
+ {
+  "vendor_id": "ven_lumen",
+  "sku": "h100-ondemand-hr",
+  "agent_id": "agent:forge",
+  "quantity": 110,
+  "window_start": "2026-10-11T00:00:00Z",
+  "window_end": "2026-10-11T23:59:59Z",
+  "source": "agent_meter"
+ },
+ {
+  "vendor_id": "ven_lumen",
+  "sku": "h100-ondemand-hr",
+  "agent_id": "agent:forge",
+  "quantity": 87,
+  "window_start": "2026-10-12T00:00:00Z",
+  "window_end": "2026-10-12T23:59:59Z",
+  "source": "agent_meter"
+ },
+ {
+  "vendor_id": "ven_lumen",
+  "sku": "h100-ondemand-hr",
+  "agent_id": "agent:forge",
+  "quantity": 107,
+  "window_start": "2026-10-13T00:00:00Z",
+  "window_end": "2026-10-13T23:59:59Z",
+  "source": "agent_meter"
+ },
+ {
+  "vendor_id": "ven_lumen",
+  "sku": "h100-ondemand-hr",
+  "agent_id": "agent:forge",
+  "quantity": 83,
+  "window_start": "2026-10-14T00:00:00Z",
+  "window_end": "2026-10-14T23:59:59Z",
+  "source": "agent_meter"
+ },
+ {
+  "vendor_id": "ven_lumen",
+  "sku": "h100-ondemand-hr",
+  "agent_id": "agent:forge",
+  "quantity": 136,
+  "window_start": "2026-10-15T00:00:00Z",
+  "window_end": "2026-10-15T23:59:59Z",
+  "source": "agent_meter"
+ },
+ {
+  "vendor_id": "ven_lumen",
+  "sku": "h100-ondemand-hr",
+  "agent_id": "agent:forge",
+  "quantity": 101,
+  "window_start": "2026-10-16T00:00:00Z",
+  "window_end": "2026-10-16T23:59:59Z",
+  "source": "agent_meter"
+ },
+ {
+  "vendor_id": "ven_lumen",
+  "sku": "h100-ondemand-hr",
+  "agent_id": "agent:forge",
+  "quantity": 119,
+  "window_start": "2026-10-17T00:00:00Z",
+  "window_end": "2026-10-17T23:59:59Z",
+  "source": "agent_meter"
+ },
+ {
+  "vendor_id": "ven_lumen",
+  "sku": "h100-ondemand-hr",
+  "agent_id": "agent:forge",
+  "quantity": 103,
+  "window_start": "2026-10-18T00:00:00Z",
+  "window_end": "2026-10-18T23:59:59Z",
+  "source": "agent_meter"
+ },
+ {
+  "vendor_id": "ven_lumen",
+  "sku": "h100-ondemand-hr",
+  "agent_id": "agent:forge",
+  "quantity": 126,
+  "window_start": "2026-10-19T00:00:00Z",
+  "window_end": "2026-10-19T23:59:59Z",
+  "source": "agent_meter"
+ },
+ {
+  "vendor_id": "ven_lumen",
+  "sku": "h100-ondemand-hr",
+  "agent_id": "agent:forge",
+  "quantity": 106,
+  "window_start": "2026-10-20T00:00:00Z",
+  "window_end": "2026-10-20T23:59:59Z",
+  "source": "agent_meter"
+ },
+ {
+  "vendor_id": "ven_lumen",
+  "sku": "h100-ondemand-hr",
+  "agent_id": "agent:forge",
+  "quantity": 104,
+  "window_start": "2026-10-21T00:00:00Z",
+  "window_end": "2026-10-21T23:59:59Z",
+  "source": "agent_meter"
+ },
+ {
+  "vendor_id": "ven_lumen",
+  "sku": "h100-ondemand-hr",
+  "agent_id": "agent:forge",
+  "quantity": 113,
+  "window_start": "2026-10-22T00:00:00Z",
+  "window_end": "2026-10-22T23:59:59Z",
+  "source": "agent_meter"
+ },
+ {
+  "vendor_id": "ven_lumen",
+  "sku": "h100-ondemand-hr",
+  "agent_id": "agent:forge",
+  "quantity": 119,
+  "window_start": "2026-10-23T00:00:00Z",
+  "window_end": "2026-10-23T23:59:59Z",
+  "source": "agent_meter"
+ }
+]

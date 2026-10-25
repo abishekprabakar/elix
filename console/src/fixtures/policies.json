@@ -1,0 +1,208 @@
+[
+ {
+  "id": "pol-001",
+  "version": 1,
+  "kind": "auto_approve",
+  "status": "proposed",
+  "scope": {
+   "agent_id": "agent:atlas",
+   "vendor_id": "ven_terrafield",
+   "sku": "scene-10m"
+  },
+  "params": {
+   "max_amount_cents": 4000
+  },
+  "rationale": "Auto approve Atlas buying Terrafield 10 m scenes up to $40. 237 earlier purchases like this were approved by Dev Okafor and none were rejected.",
+  "evidence": {
+   "precedent_count": 237,
+   "sample_ids": [
+    "WI-0333",
+    "WI-0337",
+    "WI-0338",
+    "WI-0341",
+    "WI-0342"
+   ],
+   "window": "Jul 1 to Sep 30",
+   "max_seen_cents": 3600,
+   "rejections": 0,
+   "approver": "human:dev"
+  },
+  "proposed_by": "system:learner",
+  "approved_by": null,
+  "created_at": "2026-10-24T15:48:00Z",
+  "activated_at": null,
+  "work_item_id": "WI-0400"
+ },
+ {
+  "id": "pol-002",
+  "version": 1,
+  "kind": "auto_approve",
+  "status": "proposed",
+  "scope": {
+   "agent_id": "agent:forge",
+   "vendor_id": "ven_lumen",
+   "sku": "h100-spot-hr"
+  },
+  "params": {
+   "max_amount_cents": 126500
+  },
+  "rationale": "Auto approve Forge buying Lumen H100 spot hours up to $1,265. 31 earlier purchases were approved by Dev Okafor and none were rejected.",
+  "evidence": {
+   "precedent_count": 31,
+   "sample_ids": [
+    "WI-0295",
+    "WI-0308",
+    "WI-0321",
+    "WI-0327",
+    "WI-0340"
+   ],
+   "window": "Jul 1 to Sep 30",
+   "max_seen_cents": 126000,
+   "rejections": 0,
+   "approver": "human:dev"
+  },
+  "proposed_by": "system:learner",
+  "approved_by": null,
+  "created_at": "2026-10-24T15:48:00Z",
+  "activated_at": null,
+  "work_item_id": "WI-0401"
+ },
+ {
+  "id": "pol-003",
+  "version": 1,
+  "kind": "auto_approve",
+  "status": "proposed",
+  "scope": {
+   "agent_id": "agent:scout",
+   "vendor_id": "ven_signalboard",
+   "sku": "firmo-record"
+  },
+  "params": {
+   "max_amount_cents": 12500
+  },
+  "rationale": "Auto approve Scout buying Signalboard records up to $125. 26 earlier purchases were approved by Maya Chen and none were rejected.",
+  "evidence": {
+   "precedent_count": 26,
+   "sample_ids": [
+    "WI-0281",
+    "WI-0290",
+    "WI-0302",
+    "WI-0312",
+    "WI-0331"
+   ],
+   "window": "Jul 1 to Sep 30",
+   "max_seen_cents": 12000,
+   "rejections": 0,
+   "approver": "human:maya"
+  },
+  "proposed_by": "system:learner",
+  "approved_by": null,
+  "created_at": "2026-10-24T15:48:00Z",
+  "activated_at": null,
+  "work_item_id": "WI-0402"
+ },
+ {
+  "id": "pol-004",
+  "version": 1,
+  "kind": "coding",
+  "status": "proposed",
+  "scope": {
+   "agent_id": "agent:scout",
+   "vendor_id": "ven_signalboard"
+  },
+  "params": {
+   "account": "6210"
+  },
+  "rationale": "Book Scout's Signalboard purchases to 6210 Marketing data. Sam Ortiz recoded 3 of these entries from 6110 and none went the other way.",
+  "evidence": {
+   "precedent_count": 3,
+   "sample_ids": [
+    "WI-0272",
+    "WI-0319",
+    "WI-0403"
+   ],
+   "window": "Sep 1 to Oct 24",
+   "max_seen_cents": 0,
+   "rejections": 0,
+   "from_account": "6110",
+   "to_account": "6210"
+  },
+  "proposed_by": "system:learner",
+  "approved_by": null,
+  "created_at": "2026-10-24T15:52:03Z",
+  "activated_at": null,
+  "work_item_id": "WI-0404"
+ },
+ {
+  "id": "pol-base-parsec",
+  "version": 1,
+  "kind": "auto_approve",
+  "status": "active",
+  "scope": {
+   "agent_id": "agent:scout",
+   "vendor_id": "ven_parsec"
+  },
+  "params": {
+   "max_amount_cents": 2500
+  },
+  "rationale": "Auto approve Scout buying Parsec query packs under $25, the default limit set at onboarding.",
+  "evidence": {
+   "precedent_count": 0,
+   "sample_ids": [],
+   "window": "Configured at onboarding",
+   "rejections": 0
+  },
+  "proposed_by": "human:priya",
+  "approved_by": "human:priya",
+  "created_at": "2026-07-01T15:00:00Z",
+  "activated_at": "2026-07-01T15:00:00Z",
+  "work_item_id": null
+ },
+ {
+  "id": "pol-base-tolerance",
+  "version": 2,
+  "kind": "tolerance",
+  "status": "active",
+  "scope": {},
+  "params": {
+   "tolerance_pct": 10
+  },
+  "rationale": "Allow up to 10 percent over contract unit prices before a purchase needs its budget owner.",
+  "evidence": {
+   "precedent_count": 0,
+   "sample_ids": [],
+   "window": "Configured at onboarding",
+   "rejections": 0
+  },
+  "proposed_by": "human:priya",
+  "approved_by": "human:priya",
+  "created_at": "2026-07-01T15:00:00Z",
+  "activated_at": "2026-08-10T15:00:00Z",
+  "work_item_id": null
+ },
+ {
+  "id": "pol-base-terra-v0",
+  "version": 1,
+  "kind": "auto_approve",
+  "status": "retired",
+  "scope": {
+   "agent_id": "agent:atlas",
+   "vendor_id": "ven_terrafield"
+  },
+  "params": {
+   "max_amount_cents": 1000
+  },
+  "rationale": "Auto approve Atlas buying Terrafield scenes under $10. Retired when the contract price moved to $18.",
+  "evidence": {
+   "precedent_count": 0,
+   "sample_ids": [],
+   "window": "Configured at onboarding",
+   "rejections": 0
+  },
+  "proposed_by": "human:priya",
+  "approved_by": "human:priya",
+  "created_at": "2026-07-01T15:00:00Z",
+  "activated_at": "2026-07-01T15:00:00Z",
+  "work_item_id": null
+ }
+]

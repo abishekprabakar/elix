@@ -1,0 +1,1519 @@
+{
+  "anomalies_total": 56,
+  "anomalies_caught": 56,
+  "anomalies_not_auto_paid": 56,
+  "anomalies_auto_paid": 0,
+  "clean_total": 381,
+  "clean_auto_paid": 325,
+  "clean_escalated": 56,
+  "automation_precision": 1.0,
+  "automation_rate_before_learning": 0.1202,
+  "automation_rate_after_learning": 0.853,
+  "warmup_clean_purchases": 183,
+  "scored_clean_purchases": 381,
+  "clean_invoices": {
+    "clean_total": 10,
+    "clean_auto_paid": 2
+  },
+  "categories_caught": 14,
+  "categories_total": 14,
+  "per_category": [
+    {
+      "category": "DUPLICATE_RETRY",
+      "planted": 4,
+      "caught": 4,
+      "not_auto_paid": 4,
+      "auto_paid": 0,
+      "notes": "A request resent with a new idempotency key 10 to 300 seconds later.",
+      "missed": []
+    },
+    {
+      "category": "PAYEE_CHANGED",
+      "planted": 4,
+      "caught": 4,
+      "not_auto_paid": 4,
+      "auto_paid": 0,
+      "notes": "The vendor master changed 1 to 48 hours earlier and the 402 asks for the new address.",
+      "missed": []
+    },
+    {
+      "category": "PRICE_ABOVE_CONTRACT",
+      "planted": 4,
+      "caught": 4,
+      "not_auto_paid": 4,
+      "auto_paid": 0,
+      "notes": "The vendor quotes 15 to 60 percent above the contract price.",
+      "missed": []
+    },
+    {
+      "category": "AMOUNT_MISMATCH",
+      "planted": 4,
+      "caught": 4,
+      "not_auto_paid": 4,
+      "auto_paid": 0,
+      "notes": "The 402 challenge asks for more than the agent requested.",
+      "missed": []
+    },
+    {
+      "category": "OVER_TXN_CAP",
+      "planted": 4,
+      "caught": 4,
+      "not_auto_paid": 4,
+      "auto_paid": 0,
+      "notes": "One purchase above the agent's limit per purchase.",
+      "missed": []
+    },
+    {
+      "category": "BUDGET_EXCEEDED",
+      "planted": 4,
+      "caught": 4,
+      "not_auto_paid": 4,
+      "auto_paid": 0,
+      "notes": "A burst of clean spend fills the month, then a request crosses the budget.",
+      "missed": []
+    },
+    {
+      "category": "SPLIT_PURCHASE",
+      "planted": 4,
+      "caught": 4,
+      "not_auto_paid": 4,
+      "auto_paid": 0,
+      "notes": "Seven small requests in 14 minutes, the seventh crosses the cap.",
+      "missed": []
+    },
+    {
+      "category": "UNKNOWN_VENDOR",
+      "planted": 4,
+      "caught": 4,
+      "not_auto_paid": 4,
+      "auto_paid": 0,
+      "notes": "A vendor that is not in the vendor master.",
+      "missed": []
+    },
+    {
+      "category": "MISSING_PURPOSE",
+      "planted": 4,
+      "caught": 4,
+      "not_auto_paid": 4,
+      "auto_paid": 0,
+      "notes": "No usable purpose and no task reference.",
+      "missed": []
+    },
+    {
+      "category": "MEMO_INSTRUCTIONS",
+      "planted": 4,
+      "caught": 4,
+      "not_auto_paid": 4,
+      "auto_paid": 0,
+      "notes": "A memo claims the order is pre-approved, on a request that would otherwise auto approve.",
+      "missed": []
+    },
+    {
+      "category": "SELF_APPROVAL",
+      "planted": 4,
+      "caught": 4,
+      "not_auto_paid": 4,
+      "auto_paid": 0,
+      "notes": "The agent calls approve on its own escalated request.",
+      "missed": []
+    },
+    {
+      "category": "INVOICE_DOUBLE_BILL",
+      "planted": 4,
+      "caught": 4,
+      "not_auto_paid": 4,
+      "auto_paid": 0,
+      "notes": "The invoice bills hours already paid over x402.",
+      "missed": []
+    },
+    {
+      "category": "INVOICE_OVERBILL",
+      "planted": 4,
+      "caught": 4,
+      "not_auto_paid": 4,
+      "auto_paid": 0,
+      "notes": "The invoice bills 5 to 20 percent more usage than the meter shows.",
+      "missed": []
+    },
+    {
+      "category": "INVOICE_RATE",
+      "planted": 4,
+      "caught": 4,
+      "not_auto_paid": 4,
+      "auto_paid": 0,
+      "notes": "The invoice rate differs from the contract rate.",
+      "missed": []
+    }
+  ],
+  "chain_ok": true,
+  "chain_checked": 3924,
+  "chain_head": "df94fdb90c7fad460c4bfc77017db08aa957be1975a82b509ab74d73e85f8ca7",
+  "policies_learned": [
+    {
+      "id": "pol-001",
+      "kind": "auto_approve",
+      "scope": {
+        "agent_id": "agent:atlas",
+        "vendor_id": "ven_terrafield",
+        "sku": "scene-10m"
+      },
+      "params": {
+        "max_amount_cents": 4000
+      },
+      "rationale": "Auto approve Atlas buying scenes at 10 m from Terrafield Imagery up to $40. 98 purchases like this from Jun 1 to Jun 30 were approved by Dev Okafor and none were rejected. The largest was $36.00.",
+      "precedent_count": 98
+    },
+    {
+      "id": "pol-002",
+      "kind": "auto_approve",
+      "scope": {
+        "agent_id": "agent:forge",
+        "vendor_id": "ven_lumen",
+        "sku": "h100-spot-hr"
+      },
+      "params": {
+        "max_amount_cents": 118000
+      },
+      "rationale": "Auto approve Forge buying H100 spot hours from Lumen Compute up to $1,180. 28 purchases like this from Jun 1 to Jun 30 were approved by Dev Okafor and none were rejected. The largest was $1,218.00.",
+      "precedent_count": 28
+    },
+    {
+      "id": "pol-003",
+      "kind": "auto_approve",
+      "scope": {
+        "agent_id": "agent:scout",
+        "vendor_id": "ven_signalboard",
+        "sku": "firmo-record"
+      },
+      "params": {
+        "max_amount_cents": 8000
+      },
+      "rationale": "Auto approve Scout buying firmographic records from Signalboard up to $80. 26 purchases like this from Jun 1 to Jun 30 were approved by Maya Chen and none were rejected. The largest was $80.00.",
+      "precedent_count": 26
+    }
+  ],
+  "events_total": 725,
+  "purchases_total": 604,
+  "invoices_total": 22,
+  "seed": 11,
+  "mode": "offline x402 rail with local vendor servers (real signed EIP-3009 payloads, simulated settlement)",
+  "fast": false,
+  "generated_at": "2026-10-24T12:35:39Z",
+  "engine_git_hash": null,
+  "runtime_seconds": 35.81,
+  "world": {
+    "start": "2026-06-01",
+    "warmup_days": 30,
+    "days": 90
+  },
+  "method": "A generator that never imports the engine writes 90 days of purchases, invoices and meters with planted errors and an answer key. The engine sees only the events. Days 1 to 30 are warm up history, then June closes, the learner proposes policies and a simulated controller approves them. Days 31 to 90 are scored on what Elix paid without a person.",
+  "anomaly_details": [
+    {
+      "event_id": "E00527",
+      "planted": "OVER_TXN_CAP",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "OVER_TXN_CAP"
+        ],
+        "state_in": []
+      },
+      "item_id": "WI-1201",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "OVER_TXN_CAP"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00716",
+      "planted": "INVOICE_OVERBILL",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "INVOICE_QTY_OVER_METER"
+        ],
+        "state_in": [],
+        "short_pay_cents": 4983
+      },
+      "item_id": "WI-1203",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "INVOICE_QTY_OVER_METER"
+      ],
+      "short_pay_cents": 4982,
+      "kind": "invoice",
+      "caught": true
+    },
+    {
+      "event_id": "E00721",
+      "planted": "INVOICE_RATE",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "INVOICE_RATE_MISMATCH"
+        ],
+        "state_in": [],
+        "short_pay_cents": 11054
+      },
+      "item_id": "WI-1204",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "INVOICE_RATE_MISMATCH"
+      ],
+      "short_pay_cents": 11054,
+      "kind": "invoice",
+      "caught": true
+    },
+    {
+      "event_id": "E00535",
+      "planted": "MISSING_PURPOSE",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "MISSING_PURPOSE"
+        ],
+        "state_in": [
+          "NEEDS_INFO"
+        ]
+      },
+      "item_id": "WI-1212",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_INFO",
+      "final_state": "NEEDS_INFO",
+      "flags": [
+        "MISSING_PURPOSE"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00536",
+      "planted": "MISSING_PURPOSE",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "MISSING_PURPOSE"
+        ],
+        "state_in": [
+          "NEEDS_INFO"
+        ]
+      },
+      "item_id": "WI-1220",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_INFO",
+      "final_state": "NEEDS_INFO",
+      "flags": [
+        "MISSING_PURPOSE"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00611",
+      "planted": "DUPLICATE_RETRY",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "DUPLICATE_RETRY"
+        ],
+        "state_in": [
+          "DENIED"
+        ]
+      },
+      "item_id": "WI-1227",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "DENIED",
+      "final_state": "DENIED",
+      "flags": [
+        "DUPLICATE_RETRY"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00539",
+      "planted": "MEMO_INSTRUCTIONS",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "MEMO_INSTRUCTIONS"
+        ],
+        "state_in": []
+      },
+      "item_id": "WI-1234",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "MEMO_INSTRUCTIONS"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00707",
+      "planted": "INVOICE_DOUBLE_BILL",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "CROSS_RAIL_DOUBLE_BILL"
+        ],
+        "state_in": [],
+        "short_pay_cents": 508200
+      },
+      "item_id": "WI-1235",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "CROSS_RAIL_DOUBLE_BILL"
+      ],
+      "short_pay_cents": 508200,
+      "kind": "invoice",
+      "caught": true
+    },
+    {
+      "event_id": "E00540",
+      "planted": "MEMO_INSTRUCTIONS",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "MEMO_INSTRUCTIONS"
+        ],
+        "state_in": []
+      },
+      "item_id": "WI-1244",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "MEMO_INSTRUCTIONS"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00544",
+      "planted": "SELF_APPROVAL",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "SEGREGATION"
+        ],
+        "state_in": [
+          "NEEDS_APPROVAL"
+        ],
+        "approval_refused": true
+      },
+      "item_id": "WI-1250",
+      "auto_paid": false,
+      "paid": true,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "POSTED",
+      "flags": [
+        "OVER_TXN_CAP",
+        "SEGREGATION"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "refusal": {
+        "refused": true,
+        "rule_id": "R31",
+        "audit_seq": 1690,
+        "message": "Scout cannot approve its own request. An approval has to come from Maya Chen."
+      },
+      "caught": true
+    },
+    {
+      "event_id": "E00523",
+      "planted": "AMOUNT_MISMATCH",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "AMOUNT_MISMATCH"
+        ],
+        "state_in": []
+      },
+      "item_id": "WI-1258",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "AMOUNT_MISMATCH",
+        "PRICE_ABOVE_CONTRACT"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00524",
+      "planted": "AMOUNT_MISMATCH",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "AMOUNT_MISMATCH"
+        ],
+        "state_in": []
+      },
+      "item_id": "WI-1268",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "AMOUNT_MISMATCH",
+        "PRICE_ABOVE_CONTRACT"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00525",
+      "planted": "AMOUNT_MISMATCH",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "AMOUNT_MISMATCH"
+        ],
+        "state_in": []
+      },
+      "item_id": "WI-1278",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "AMOUNT_MISMATCH",
+        "PRICE_ABOVE_CONTRACT"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00541",
+      "planted": "MEMO_INSTRUCTIONS",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "MEMO_INSTRUCTIONS"
+        ],
+        "state_in": []
+      },
+      "item_id": "WI-1292",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "MEMO_INSTRUCTIONS"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00531",
+      "planted": "UNKNOWN_VENDOR",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "UNKNOWN_VENDOR"
+        ],
+        "state_in": []
+      },
+      "item_id": "WI-1296",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "UNKNOWN_VENDOR"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00610",
+      "planted": "DUPLICATE_RETRY",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "DUPLICATE_RETRY"
+        ],
+        "state_in": [
+          "DENIED"
+        ]
+      },
+      "item_id": "WI-1299",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "DENIED",
+      "final_state": "DENIED",
+      "flags": [
+        "DUPLICATE_RETRY"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00557",
+      "planted": "SPLIT_PURCHASE",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "SPLIT_PURCHASE"
+        ],
+        "state_in": []
+      },
+      "item_id": "WI-1315",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "SPLIT_PURCHASE"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00722",
+      "planted": "INVOICE_OVERBILL",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "INVOICE_QTY_OVER_METER"
+        ],
+        "state_in": [],
+        "short_pay_cents": 7728
+      },
+      "item_id": "WI-1317",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "INVOICE_QTY_OVER_METER"
+      ],
+      "short_pay_cents": 7727,
+      "kind": "invoice",
+      "caught": true
+    },
+    {
+      "event_id": "E00580",
+      "planted": "PAYEE_CHANGED",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "PAYEE_CHANGED"
+        ],
+        "state_in": []
+      },
+      "item_id": "WI-1325",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "PAYEE_CHANGED"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00519",
+      "planted": "PRICE_ABOVE_CONTRACT",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "PRICE_ABOVE_CONTRACT"
+        ],
+        "state_in": []
+      },
+      "item_id": "WI-1333",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "PRICE_ABOVE_CONTRACT"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00709",
+      "planted": "INVOICE_DOUBLE_BILL",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "CROSS_RAIL_DOUBLE_BILL"
+        ],
+        "state_in": [],
+        "short_pay_cents": 424200
+      },
+      "item_id": "WI-1339",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "CROSS_RAIL_DOUBLE_BILL"
+      ],
+      "short_pay_cents": 424200,
+      "kind": "invoice",
+      "caught": true
+    },
+    {
+      "event_id": "E00542",
+      "planted": "MEMO_INSTRUCTIONS",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "MEMO_INSTRUCTIONS"
+        ],
+        "state_in": []
+      },
+      "item_id": "WI-1347",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "MEMO_INSTRUCTIONS"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00564",
+      "planted": "SPLIT_PURCHASE",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "SPLIT_PURCHASE"
+        ],
+        "state_in": []
+      },
+      "item_id": "WI-1359",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "SPLIT_PURCHASE"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00571",
+      "planted": "SPLIT_PURCHASE",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "SPLIT_PURCHASE"
+        ],
+        "state_in": []
+      },
+      "item_id": "WI-1371",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "SPLIT_PURCHASE"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00537",
+      "planted": "MISSING_PURPOSE",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "MISSING_PURPOSE"
+        ],
+        "state_in": [
+          "NEEDS_INFO"
+        ]
+      },
+      "item_id": "WI-1378",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_INFO",
+      "final_state": "NEEDS_INFO",
+      "flags": [
+        "MISSING_PURPOSE"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00612",
+      "planted": "DUPLICATE_RETRY",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "DUPLICATE_RETRY"
+        ],
+        "state_in": [
+          "DENIED"
+        ]
+      },
+      "item_id": "WI-1380",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "DENIED",
+      "final_state": "DENIED",
+      "flags": [
+        "DUPLICATE_RETRY"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00526",
+      "planted": "AMOUNT_MISMATCH",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "AMOUNT_MISMATCH"
+        ],
+        "state_in": []
+      },
+      "item_id": "WI-1389",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "AMOUNT_MISMATCH",
+        "PRICE_ABOVE_CONTRACT"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00710",
+      "planted": "INVOICE_RATE",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "INVOICE_RATE_MISMATCH"
+        ],
+        "state_in": [],
+        "short_pay_cents": 25155
+      },
+      "item_id": "WI-1393",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "INVOICE_RATE_MISMATCH"
+      ],
+      "short_pay_cents": 25155,
+      "kind": "invoice",
+      "caught": true
+    },
+    {
+      "event_id": "E00596",
+      "planted": "BUDGET_EXCEEDED",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "BUDGET_EXCEEDED"
+        ],
+        "state_in": []
+      },
+      "item_id": "WI-1409",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "BUDGET_EXCEEDED"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00597",
+      "planted": "BUDGET_EXCEEDED",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "BUDGET_EXCEEDED"
+        ],
+        "state_in": []
+      },
+      "item_id": "WI-1410",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "BUDGET_EXCEEDED"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00718",
+      "planted": "INVOICE_RATE",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "INVOICE_RATE_MISMATCH"
+        ],
+        "state_in": [],
+        "short_pay_cents": 2385
+      },
+      "item_id": "WI-1431",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "INVOICE_RATE_MISMATCH"
+      ],
+      "short_pay_cents": 2385,
+      "kind": "invoice",
+      "caught": true
+    },
+    {
+      "event_id": "E00546",
+      "planted": "SELF_APPROVAL",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "SEGREGATION"
+        ],
+        "state_in": [
+          "NEEDS_APPROVAL"
+        ],
+        "approval_refused": true
+      },
+      "item_id": "WI-1439",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "NEEDS_APPROVAL",
+      "flags": [
+        "OVER_TXN_CAP",
+        "PAYEE_CHANGED",
+        "SEGREGATION"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "refusal": {
+        "refused": true,
+        "rule_id": "R31",
+        "audit_seq": 2819,
+        "message": "Atlas cannot approve its own request. An approval has to come from Dev Okafor."
+      },
+      "caught": true
+    },
+    {
+      "event_id": "E00711",
+      "planted": "INVOICE_DOUBLE_BILL",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "CROSS_RAIL_DOUBLE_BILL"
+        ],
+        "state_in": [],
+        "short_pay_cents": 2181900
+      },
+      "item_id": "WI-1442",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "CROSS_RAIL_DOUBLE_BILL"
+      ],
+      "short_pay_cents": 2181900,
+      "kind": "invoice",
+      "caught": true
+    },
+    {
+      "event_id": "E00548",
+      "planted": "SELF_APPROVAL",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "SEGREGATION"
+        ],
+        "state_in": [
+          "NEEDS_APPROVAL"
+        ],
+        "approval_refused": true
+      },
+      "item_id": "WI-1450",
+      "auto_paid": false,
+      "paid": true,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "POSTED",
+      "flags": [
+        "OVER_TXN_CAP",
+        "SEGREGATION"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "refusal": {
+        "refused": true,
+        "rule_id": "R31",
+        "audit_seq": 2881,
+        "message": "Forge cannot approve its own request. An approval has to come from Dev Okafor."
+      },
+      "caught": true
+    },
+    {
+      "event_id": "E00532",
+      "planted": "UNKNOWN_VENDOR",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "UNKNOWN_VENDOR"
+        ],
+        "state_in": []
+      },
+      "item_id": "WI-1453",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "UNKNOWN_VENDOR"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00533",
+      "planted": "UNKNOWN_VENDOR",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "UNKNOWN_VENDOR"
+        ],
+        "state_in": []
+      },
+      "item_id": "WI-1461",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "UNKNOWN_VENDOR"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00520",
+      "planted": "PRICE_ABOVE_CONTRACT",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "PRICE_ABOVE_CONTRACT"
+        ],
+        "state_in": []
+      },
+      "item_id": "WI-1473",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "PRICE_ABOVE_CONTRACT"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00521",
+      "planted": "PRICE_ABOVE_CONTRACT",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "PRICE_ABOVE_CONTRACT"
+        ],
+        "state_in": []
+      },
+      "item_id": "WI-1484",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "PRICE_ABOVE_CONTRACT"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00712",
+      "planted": "INVOICE_RATE",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "INVOICE_RATE_MISMATCH"
+        ],
+        "state_in": [],
+        "short_pay_cents": 7592
+      },
+      "item_id": "WI-1489",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "INVOICE_RATE_MISMATCH"
+      ],
+      "short_pay_cents": 7592,
+      "kind": "invoice",
+      "caught": true
+    },
+    {
+      "event_id": "E00578",
+      "planted": "SPLIT_PURCHASE",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "SPLIT_PURCHASE"
+        ],
+        "state_in": []
+      },
+      "item_id": "WI-1502",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "SPLIT_PURCHASE"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00528",
+      "planted": "OVER_TXN_CAP",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "OVER_TXN_CAP"
+        ],
+        "state_in": []
+      },
+      "item_id": "WI-1509",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "OVER_TXN_CAP"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00522",
+      "planted": "PRICE_ABOVE_CONTRACT",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "PRICE_ABOVE_CONTRACT"
+        ],
+        "state_in": []
+      },
+      "item_id": "WI-1519",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "PRICE_ABOVE_CONTRACT"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00719",
+      "planted": "INVOICE_OVERBILL",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "INVOICE_QTY_OVER_METER"
+        ],
+        "state_in": [],
+        "short_pay_cents": 3414
+      },
+      "item_id": "WI-1536",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "INVOICE_QTY_OVER_METER"
+      ],
+      "short_pay_cents": 3413,
+      "kind": "invoice",
+      "caught": true
+    },
+    {
+      "event_id": "E00724",
+      "planted": "INVOICE_OVERBILL",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "INVOICE_QTY_OVER_METER"
+        ],
+        "state_in": [],
+        "short_pay_cents": 4048
+      },
+      "item_id": "WI-1537",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "INVOICE_QTY_OVER_METER"
+      ],
+      "short_pay_cents": 4045,
+      "kind": "invoice",
+      "caught": true
+    },
+    {
+      "event_id": "E00582",
+      "planted": "PAYEE_CHANGED",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "PAYEE_CHANGED"
+        ],
+        "state_in": []
+      },
+      "item_id": "WI-1545",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "PAYEE_CHANGED"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00713",
+      "planted": "INVOICE_DOUBLE_BILL",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "CROSS_RAIL_DOUBLE_BILL"
+        ],
+        "state_in": [],
+        "short_pay_cents": 495600
+      },
+      "item_id": "WI-1546",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "CROSS_RAIL_DOUBLE_BILL"
+      ],
+      "short_pay_cents": 495600,
+      "kind": "invoice",
+      "caught": true
+    },
+    {
+      "event_id": "E00550",
+      "planted": "SELF_APPROVAL",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "SEGREGATION"
+        ],
+        "state_in": [
+          "NEEDS_APPROVAL"
+        ],
+        "approval_refused": true
+      },
+      "item_id": "WI-1554",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "NEEDS_APPROVAL",
+      "flags": [
+        "OVER_TXN_CAP",
+        "PAYEE_CHANGED",
+        "SEGREGATION"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "refusal": {
+        "refused": true,
+        "rule_id": "R31",
+        "audit_seq": 3486,
+        "message": "Scout cannot approve its own request. An approval has to come from Maya Chen."
+      },
+      "caught": true
+    },
+    {
+      "event_id": "E00534",
+      "planted": "UNKNOWN_VENDOR",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "UNKNOWN_VENDOR"
+        ],
+        "state_in": []
+      },
+      "item_id": "WI-1558",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "UNKNOWN_VENDOR"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00584",
+      "planted": "PAYEE_CHANGED",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "PAYEE_CHANGED"
+        ],
+        "state_in": []
+      },
+      "item_id": "WI-1571",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "PAYEE_CHANGED"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00538",
+      "planted": "MISSING_PURPOSE",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "MISSING_PURPOSE"
+        ],
+        "state_in": [
+          "NEEDS_INFO"
+        ]
+      },
+      "item_id": "WI-1578",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_INFO",
+      "final_state": "NEEDS_INFO",
+      "flags": [
+        "MISSING_PURPOSE"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00529",
+      "planted": "OVER_TXN_CAP",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "OVER_TXN_CAP"
+        ],
+        "state_in": []
+      },
+      "item_id": "WI-1587",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "OVER_TXN_CAP"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00607",
+      "planted": "BUDGET_EXCEEDED",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "BUDGET_EXCEEDED"
+        ],
+        "state_in": []
+      },
+      "item_id": "WI-1604",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "BUDGET_EXCEEDED"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00608",
+      "planted": "BUDGET_EXCEEDED",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "BUDGET_EXCEEDED"
+        ],
+        "state_in": []
+      },
+      "item_id": "WI-1605",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "BUDGET_EXCEEDED"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00530",
+      "planted": "OVER_TXN_CAP",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "OVER_TXN_CAP"
+        ],
+        "state_in": []
+      },
+      "item_id": "WI-1611",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "OVER_TXN_CAP",
+        "PAYEE_CHANGED"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00586",
+      "planted": "PAYEE_CHANGED",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "PAYEE_CHANGED"
+        ],
+        "state_in": []
+      },
+      "item_id": "WI-1621",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "NEEDS_APPROVAL",
+      "final_state": "REJECTED",
+      "flags": [
+        "PAYEE_CHANGED"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    },
+    {
+      "event_id": "E00609",
+      "planted": "DUPLICATE_RETRY",
+      "expect": {
+        "auto_pay": false,
+        "flags_any": [
+          "DUPLICATE_RETRY"
+        ],
+        "state_in": [
+          "DENIED"
+        ]
+      },
+      "item_id": "WI-1626",
+      "auto_paid": false,
+      "paid": false,
+      "state_after_decision": "DENIED",
+      "final_state": "DENIED",
+      "flags": [
+        "DUPLICATE_RETRY"
+      ],
+      "short_pay_cents": null,
+      "kind": "purchase",
+      "caught": true
+    }
+  ]
+}
